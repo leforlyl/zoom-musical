@@ -1,0 +1,16 @@
+# material original de las revistas (escaneos, fotos en bruto, PDFs):
+# no hace falta para la pagina, build_assets.py ya saco de ahi lo que
+# se usa y lo dejo en assets/. Son carpetas pesadas y no conviene
+# subirlas a un repo publico.
+/Pink Floyd/
+/Soda Stereo/
+/The Beatles/
+/Stevie Wonder/
+/grupos/
+*.pdf
+
+# version portable (un solo html gigante, generado por build_portable.py):
+# no hace falta en el repo, la pagina publicada ya sirve como ese link.
+Zoom_Musical_portable.html
+
+__pycache__/

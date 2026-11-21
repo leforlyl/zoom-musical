@@ -1,0 +1,773 @@
+﻿/* ===========================================================
+   Zoom Musical
+   Un solo set de variables CSS por album. Al cambiar
+   body[data-theme] cambia TODA la pagina.
+   =========================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root{
+  --maxw: 1240px;
+  --radius: 18px;
+}
+
+/* ---------- TEMA: HOME (neutro, revista de rock) ---------- */
+body[data-theme="home"]{
+  --bg:#141317; --bg2:#1d1b21;
+  --ink:#f3ede1; --ink-dim:#b3aa9b;
+  --paper:#f4efe3; --paper-ink:#241f1a; --paper-dim:#6a6055;
+  --accent:#e2563c; --accent2:#e9b14a;
+  --line:rgba(243,237,225,.18);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:normal;
+  --cover-radius:4px;
+}
+/* ---------- TEMA: HELP! (union jack, pop art britanico) ---------- */
+body[data-theme="help"]{
+  --bg:#ede1c4; --bg2:#f5ecd6;
+  --ink:#10203d; --ink-dim:#3a4d72;
+  --paper:#faf3e2; --paper-ink:#10203d; --paper-dim:#5f6a85;
+  --accent:#d4231a; --accent2:#14305c;
+  --line:rgba(16,32,61,.22);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  /* tema claro: el velo tambien va claro, un poco mas cargado abajo
+     donde cae el film-strip y el Big Ben de la ilustracion */
+  --fondo:url('assets/backgrounds/help.jpg');
+  --velo-1:rgba(250,243,226,.56); --velo-2:rgba(250,243,226,.78);
+}
+
+/* ---------- TEMA: REVOLVER (papel crema, pop art) ---------- */
+body[data-theme="revolver"]{
+  --bg:#eee5d2; --bg2:#f7f0df;
+  --ink:#1b1511; --ink-dim:#4a4133;
+  --paper:#fbf5e7; --paper-ink:#1b1511; --paper-dim:#6f6353;
+  --accent:#e2621f; --accent2:#8a6ab8;
+  /* el acento es naranja claro: texto oscuro dentro del boton activo */
+  --on-accent:#15100b;
+  --ink-accent:#8a3a0e;
+  --line:rgba(27,21,17,.22);
+  --font-display:'Abril Fatface', serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  /* tema claro: el velo tambien va claro */
+  --fondo:url('assets/backgrounds/revolver.jpg');
+  --velo-1:rgba(248,242,228,.58); --velo-2:rgba(248,242,228,.74);
+}
+
+/* ---------- TEMA: SGT PEPPER (psicodelia saturada) ---------- */
+body[data-theme="sgtpepper"]{
+  --bg:#3c1164; --bg2:#5a1a86;
+  --ink:#fdf3d6; --ink-dim:#d9b7e8;
+  --paper:#fdf2d6; --paper-ink:#4a1163; --paper-dim:#7a5a86;
+  --accent:#ffa81f; --accent2:#ff4fa3;
+  --on-accent:#15100b;
+  --line:rgba(253,243,214,.26);
+  --font-display:'Alfa Slab One', serif;
+  --font-title:'Alfa Slab One', serif;
+  --title-style:normal;
+  --cover-radius:3px;
+  /* fondo muy cargado de color: necesita bastante velo */
+  --fondo:url('assets/backgrounds/sgtpepper.jpg');
+  --velo-1:rgba(42,8,62,.56); --velo-2:rgba(42,8,62,.76);
+}
+
+/* ---------- TEMA: ABBEY ROAD (papel crema, verde oliva) ---------- */
+body[data-theme="abbeyroad"]{
+  --bg:#e9e3d2; --bg2:#f4efe2;
+  --ink:#1f2419; --ink-dim:#232718;
+  --paper:#f8f4e8; --paper-ink:#1f2419; --paper-dim:#6a7059;
+  --accent:#4f6137; --accent2:#8a9470;
+  --ink-accent:#2f3a22;
+  --line:rgba(31,36,25,.22);
+  --font-display:'Abril Fatface', serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  /* tema claro: velo claro y parejo en toda la pagina */
+  --fondo:url('assets/backgrounds/abbeyroad.jpg');
+  --velo-1:rgba(240,235,222,.68); --velo-2:rgba(240,235,222,.42);
+}
+
+/* ---------- TEMA: LET IT BE (papel envejecido y rojo) ---------- */
+body[data-theme="letitbe"]{
+  --bg:#e7dec7; --bg2:#f1e9d6;
+  --ink:#1e1a16; --ink-dim:#2e2820;
+  --paper:#f6efdd; --paper-ink:#1e1a16; --paper-dim:#6b6052;
+  --accent:#a51f1f; --accent2:#1e1a16;
+  --line:rgba(30,26,22,.22);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* tema claro: el velo tambien va claro */
+  --fondo:url('assets/backgrounds/letitbe.jpg');
+  --velo-1:rgba(240,233,214,.38); --velo-2:rgba(240,233,214,.56);
+}
+
+/* ---------- TEMA: MEDDLE ---------- */
+body[data-theme="meddle"]{
+  --bg:#0b4454; --bg2:#073645;
+  --ink:#f6ecd6; --ink-dim:#c8e2e8;
+  --paper:#eadfc6; --paper-ink:#123845; --paper-dim:#5b7682;
+  --accent:#f06d9b; --accent2:#6fd3e0;
+  --on-accent:#15100b;
+  --ink-accent:#ffa8c6;
+  --line:rgba(246,236,214,.22);
+  --font-display:'Alfa Slab One', serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:3px;
+  --fondo:url('assets/backgrounds/meddle.jpg');
+  --velo-1:rgba(6,38,49,.56); --velo-2:rgba(6,38,49,.78);
+}
+/* ---------- TEMA: DARK SIDE ---------- */
+body[data-theme="darkside"]{
+  --bg:#060608; --bg2:#0d0d12;
+  --ink:#f7f2e5; --ink-dim:#9c968a;
+  --paper:#fbeeda; --paper-ink:#141116; --paper-dim:#5d5550;
+  --accent:#ef3d87; --accent2:#58c8ff;
+  --on-accent:#15100b;
+  --line:rgba(247,242,229,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* la foto ya es casi negra: el velo va suave, solo para que el texto
+     no caiga encima del arcoiris */
+  --fondo:url('assets/backgrounds/darkside.jpg');
+  --velo-1:rgba(4,4,8,.42); --velo-2:rgba(4,4,8,.66);
+}
+/* ---------- TEMA: WISH YOU WERE HERE ---------- */
+body[data-theme="wywh"]{
+  --bg:#1d1714; --bg2:#2a211b;
+  --ink:#efe3cd; --ink-dim:#cdbda0;
+  --paper:#e7dbc1; --paper-ink:#2a211a; --paper-dim:#6d5e48;
+  --accent:#e8571a; --accent2:#c08a3e;
+  --on-accent:#15100b;
+  --ink-accent:#f2854a;
+  --line:rgba(239,227,205,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* foto muy clara: necesita mas velo que las oscuras */
+  --fondo:url('assets/backgrounds/wywh.jpg');
+  --velo-1:rgba(26,17,12,.70); --velo-2:rgba(26,17,12,.86);
+}
+/* ---------- TEMA: SONGS IN THE KEY OF LIFE ---------- */
+body[data-theme="songs"]{
+  --bg:#3b1009; --bg2:#5e1a09;
+  --ink:#fbe3b0; --ink-dim:#d9a76a;
+  --paper:#fdf4e0; --paper-ink:#4a1708; --paper-dim:#8a5b35;
+  --accent:#e8832a; --accent2:#c93d17;
+  --on-accent:#15100b;
+  --line:rgba(251,227,176,.25);
+  --font-display:'Rozha One', serif;
+  --font-title:'Rozha One', serif;
+  --title-style:normal;
+  --cover-radius:3px;
+  /* naranjas y amarillos a pleno: el velo mas fuerte de todos */
+  --fondo:url('assets/backgrounds/songs.jpg');
+  --velo-1:rgba(44,11,6,.70); --velo-2:rgba(44,11,6,.86);
+}
+/* ---------- TEMA: ANIMALS ---------- */
+body[data-theme="animals"]{
+  --bg:#1f2932; --bg2:#2b3742;
+  --ink:#ece5d5; --ink-dim:#9aa4ad;
+  --paper:#ded7c6; --paper-ink:#1d252d; --paper-dim:#5f6b76;
+  --accent:#b03a26; --accent2:#8d99a5;
+  /* el rojo del acento se pierde sobre la foto oscura */
+  --ink-accent:#e0634a;
+  --line:rgba(236,229,213,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  /* la foto ya es oscura, alcanza con poco velo */
+  --fondo:url('assets/backgrounds/animals.jpg');
+  --velo-1:rgba(14,20,26,.48); --velo-2:rgba(14,20,26,.74);
+}
+
+/* ---------- TEMA: THE WALL (unico tema claro) ---------- */
+body[data-theme="wall"]{
+  --bg:#edeae4; --bg2:#f7f5f1;
+  --ink:#1a1a1a; --ink-dim:#6d6862;
+  --paper:#fdfcfa; --paper-ink:#1a1a1a; --paper-dim:#6d6862;
+  --accent:#d8231f; --accent2:#1a1a1a;
+  --line:rgba(26,26,26,.22);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:2px;
+}
+
+/* ---------- TEMA: THE FINAL CUT (negro, amapola y cintas) ---------- */
+body[data-theme="finalcut"]{
+  --bg:#07070a; --bg2:#111016;
+  --ink:#f2ead6; --ink-dim:#9c9484;
+  --paper:#0d0d12; --paper-ink:#f2ead6; --paper-dim:#9c9484;
+  --block-line:rgba(216,31,31,.24);
+  --accent:#d81f1f; --accent2:#c9a227;
+  /* el rojo del acento desaparece sobre el fondo negro */
+  --ink-accent:#f2705e;
+  --line:rgba(242,234,214,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* la foto ya es casi negra: el velo va suave */
+  --fondo:url('assets/backgrounds/finalcut.jpg');
+  --velo-1:rgba(5,3,5,.40); --velo-2:rgba(5,3,5,.66);
+}
+
+/* ---------- TEMA: SODA STEREO 1984 (papel claro, neon ochentero) ---------- */
+body[data-theme="soda84"]{
+  --bg:#e8e3da; --bg2:#f5f2ec;
+  --ink:#16160f; --ink-dim:#4a463e;
+  --paper:#fbf9f4; --paper-ink:#16160f; --paper-dim:#6b665c;
+  --accent:#ff1f7a; --accent2:#f2d20a;
+  --on-accent:#15100b;
+  --ink-accent:#7a0036;
+  --line:rgba(22,22,15,.22);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* Tema claro: el velo tambien va claro, si no el texto negro se pierde.
+     Este fondo trae la banda en blanco y negro sobre el lado izquierdo,
+     justo donde va el titulo, asi que el velo corre en horizontal:
+     tapa donde esta el texto y deja ver la imagen hacia la derecha. */
+  --fondo:url('assets/backgrounds/soda84.jpg');
+  --velo-dir:100deg;
+  --velo-1:rgba(244,241,234,.82); --velo-2:rgba(244,241,234,.28);
+}
+
+/* ---------- TEMA: NADA PERSONAL (azul electrico y magenta) ---------- */
+body[data-theme="nadapersonal"]{
+  --bg:#1a18cf; --bg2:#2a22e8;
+  --ink:#f6f3ea; --ink-dim:#b9b4ff;
+  --paper:#f3f0e6; --paper-ink:#15151f; --paper-dim:#63606e;
+  --accent:#ff22b0; --accent2:#15151f;
+  --on-accent:#15100b;
+  --line:rgba(246,243,234,.26);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  --fondo:url('assets/backgrounds/nadapersonal.jpg');
+  --velo-1:rgba(8,6,58,.42); --velo-2:rgba(8,6,58,.68);
+}
+
+/* ---------- TEMA: SIGNOS (dorado, olivo y malva) ---------- */
+body[data-theme="signos"]{
+  --bg:#ecd9a8; --bg2:#f5e8c2;
+  --ink:#241f12; --ink-dim:#5a4f2e;
+  --paper:#f7edd2; --paper-ink:#241f12; --paper-dim:#6e6244;
+  --accent:#6b6b1f; --accent2:#b4788c;
+  --line:rgba(36,31,18,.22);
+  --font-display:'Abril Fatface', serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  /* tema claro: el velo tambien va claro, el fondo es un pasillo
+     calido y recargado de formas, necesita bastante velo */
+  --fondo:url('assets/backgrounds/signos.jpg');
+  --velo-1:rgba(247,237,210,.6); --velo-2:rgba(247,237,210,.8);
+}
+
+/* ---------- TEMA: DOBLE VIDA (Buenos Aires en blanco y negro) ---------- */
+body[data-theme="doblevida"]{
+  --bg:#15121c; --bg2:#211c2e;
+  --ink:#f2eef5; --ink-dim:#c9bdd8;
+  --paper:#f4f1f7; --paper-ink:#1c1726; --paper-dim:#6b637c;
+  --accent:#9b6bd1; --accent2:#2b2838;
+  --on-accent:#15100b;
+  --line:rgba(242,238,245,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Abril Fatface', serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* fondo en blanco y negro con mucho contraste propio (cielo claro,
+     edificios oscuros): va un velo oscuro parejo para unificarlo */
+  --fondo:url('assets/backgrounds/doblevida.jpg');
+  --velo-1:rgba(10,8,16,.6); --velo-2:rgba(10,8,16,.8);
+}
+
+/* ---------- TEMA: CANCION ANIMAL (naranja y violeta) ---------- */
+body[data-theme="cancionanimal"]{
+  --bg:#c2400d; --bg2:#e05a12;
+  --ink:#fff1dd; --ink-dim:#ffc894;
+  --paper:#fdf3e2; --paper-ink:#2b1205; --paper-dim:#7d5231;
+  --accent:#4b2fa8; --accent2:#f2b22b;
+  /* el violeta no contrasta con el naranja: va en crema */
+  --ink-accent:var(--ink);
+  --line:rgba(255,241,221,.26);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Alfa Slab One', serif;
+  --title-style:normal;
+  --cover-radius:2px;
+  --fondo:url('assets/backgrounds/cancionanimal.jpg');
+  --velo-1:rgba(92,24,4,.44); --velo-2:rgba(92,24,4,.68);
+}
+
+/* ---------- TEMA: DYNAMO (neon noventero, bloques oscuros) ---------- */
+body[data-theme="dynamo"]{
+  --bg:#1d0308; --bg2:#3d060f;
+  --ink:#f4f1ef; --ink-dim:#c99aa0;
+  --paper:#15060b; --paper-ink:#f4f1ef; --paper-dim:#b6a9ad;
+  --block-line:rgba(198,240,50,.22);
+  --accent:#c6f032; --accent2:#ff2d1f;
+  --on-accent:#15100b;
+  --line:rgba(244,241,239,.2);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  --fondo:url('assets/backgrounds/dynamo.jpg');
+  --velo-1:rgba(12,2,6,.50); --velo-2:rgba(12,2,6,.72);
+}
+
+/* ---------- TEMA: SUEÑO STEREO (lavanda, cromo y dream pop) ---------- */
+body[data-theme="suenostereo"]{
+  --bg:#e3dff0; --bg2:#ece8f7;
+  --ink:#1b1828; --ink-dim:#423c58;
+  --paper:#f4f1fa; --paper-ink:#1b1828; --paper-dim:#6b647e;
+  --accent:#5b36a8; --accent2:#2f9e94;
+  --ink-accent:#4a2a8c;
+  --line:rgba(27,24,40,.22);
+  --font-display:'Archivo Black', sans-serif;
+  --font-title:'Archivo Black', sans-serif;
+  --title-style:italic;
+  --cover-radius:2px;
+  /* tema claro: el velo tambien va claro, un poco mas cargado arriba
+     porque las esquinas de la foto traen parlantes bien oscuros */
+  --fondo:url('assets/backgrounds/suenostereo.jpg');
+  --velo-1:rgba(240,238,248,.62); --velo-2:rgba(240,238,248,.8);
+}
+
+/* =========================== BASE =========================== */
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Bitter', Georgia, serif;
+  font-size:16px;
+  line-height:1.55;
+  /* lineas internas de los bloques de papel; los temas oscuros la pisan */
+  --block-line:rgba(0,0,0,.14);
+  /* direccion del velo sobre la foto de fondo: por defecto de arriba
+     a abajo, pero un tema puede girarlo si su imagen lo necesita */
+  --velo-dir:180deg;
+  /* color del texto dentro del boton activo del menu. Va blanco por
+     defecto, pero los temas de acento claro (naranja, rosa, amarillo)
+     lo pisan por uno oscuro: si no, no se lee nada. */
+  --on-accent:#fff;
+  /* el "Musical" del logo y el titulo del disco van sobre la foto de
+     fondo, sin bloque detras. Por defecto toman el acento, y el tema lo
+     pisa cuando ese color no contrasta con su imagen. */
+  --ink-accent:var(--accent);
+  transition:background-color .7s cubic-bezier(.4,.1,.2,1), color .7s cubic-bezier(.4,.1,.2,1);
+  overflow-x:hidden;
+}
+
+/* ambiente de fondo: cambia por tema */
+#decor{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  opacity:1; transition:opacity .35s ease;
+}
+#decor::before, #decor::after{
+  content:''; position:absolute; inset:0;
+}
+body.is-switching #decor{ opacity:0; }
+
+#grain{
+  position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.35;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='.28'/></svg>");
+  mix-blend-mode:overlay;
+}
+
+main, .site-head, .site-foot{ position:relative; z-index:2; }
+
+/* ------- DECOR por tema -------
+   Los albumes que tienen foto declaran --fondo y los dos tonos del velo
+   (--velo-1 arriba, --velo-2 abajo). La imagen queda fija y el contenido
+   scrollea por encima. El velo existe porque el titulo, el ano y los
+   generos van sueltos sobre el fondo, sin bloque que los respalde. */
+body[data-fondo="si"] #decor::before{
+  background-image:var(--fondo);
+  background-size:cover;
+  background-position:center;
+}
+body[data-fondo="si"] #decor::after{
+  background:linear-gradient(var(--velo-dir), var(--velo-1), var(--velo-2));
+}
+
+body[data-theme="home"] #decor::before{
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(209,65,44,.22), transparent 70%),
+    radial-gradient(700px 500px at 0% 100%, rgba(233,177,74,.14), transparent 70%),
+    linear-gradient(180deg, var(--bg2), var(--bg));
+}
+body[data-theme="wall"] #decor::before{
+  background-color:#edeae4;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='40'><g fill='%23d3cec4'><rect y='0' width='80' height='2.5'/><rect y='20' width='80' height='2.5'/><rect x='0' y='2.5' width='2.5' height='17.5'/><rect x='40' y='2.5' width='2.5' height='17.5'/><rect x='20' y='22.5' width='2.5' height='17.5'/><rect x='60' y='22.5' width='2.5' height='17.5'/></g></svg>");
+  background-size:104px 52px;
+}
+body[data-theme="wall"] #decor::after{
+  background:
+    radial-gradient(800px 500px at 95% 5%, rgba(216,35,31,.1), transparent 70%),
+    radial-gradient(900px 600px at 0% 100%, rgba(26,26,26,.09), transparent 70%);
+}
+/* el tema claro necesita menos grano y bordes oscuros */
+body[data-theme="wall"] #grain{ opacity:.1; mix-blend-mode:multiply; }
+body[data-theme="wall"] .cover{ border-color:rgba(26,26,26,.3); }
+body[data-theme="wall"] .cover-wrap,
+body[data-theme="wall"] .card .cover{ box-shadow:0 14px 34px rgba(26,26,26,.22); }
+body[data-theme="wall"] .block{ box-shadow:0 14px 34px rgba(26,26,26,.16); }
+
+/* las dos revistas de Soda usan bandas negras para los titulos */
+body[data-theme="soda84"] .h-sec,
+body[data-theme="nadapersonal"] .h-sec{
+  background:#15150f; color:#fbf9f4;
+  display:inline-block; padding:3px 16px 6px; border-bottom:0;
+  transform:skewX(-8deg); letter-spacing:.06em;
+}
+/* Abbey Road: los titulos van en verde oliva sobre linea fina, como la revista */
+body[data-theme="abbeyroad"] .h-sec{ letter-spacing:.01em; }
+body[data-theme="abbeyroad"] #grain{ opacity:.1; mix-blend-mode:multiply; }
+body[data-theme="abbeyroad"] .cover{ border-color:rgba(31,36,25,.28); }
+body[data-theme="abbeyroad"] .cover-wrap,
+body[data-theme="abbeyroad"] .card .cover{ box-shadow:0 14px 34px rgba(31,36,25,.24); }
+body[data-theme="abbeyroad"] .block{ box-shadow:0 14px 34px rgba(31,36,25,.18); }
+
+/* el tema claro del 84 necesita bordes y sombras oscuras, y menos grano */
+body[data-theme="soda84"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="soda84"] .cover{ border-color:rgba(22,22,15,.28); }
+body[data-theme="soda84"] .cover-wrap,
+body[data-theme="soda84"] .card .cover{ box-shadow:0 14px 34px rgba(22,22,15,.24); }
+body[data-theme="soda84"] .block{ box-shadow:0 14px 34px rgba(22,22,15,.18); }
+
+/* Let It Be es tema claro: menos grano y bordes oscuros */
+body[data-theme="letitbe"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="letitbe"] .cover{ border-color:rgba(30,26,22,.28); }
+body[data-theme="letitbe"] .cover-wrap,
+body[data-theme="letitbe"] .card .cover{ box-shadow:0 14px 34px rgba(30,26,22,.24); }
+body[data-theme="letitbe"] .block{ box-shadow:0 14px 34px rgba(30,26,22,.18); }
+
+/* Revolver tambien es tema claro: mismo tratamiento */
+body[data-theme="revolver"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="revolver"] .cover{ border-color:rgba(27,21,17,.28); }
+body[data-theme="revolver"] .cover-wrap,
+body[data-theme="revolver"] .card .cover{ box-shadow:0 14px 34px rgba(27,21,17,.24); }
+body[data-theme="revolver"] .block{ box-shadow:0 14px 34px rgba(27,21,17,.18); }
+
+/* Sueño Stereo tambien es tema claro: mismo tratamiento */
+body[data-theme="suenostereo"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="suenostereo"] .cover{ border-color:rgba(27,24,40,.28); }
+body[data-theme="suenostereo"] .cover-wrap,
+body[data-theme="suenostereo"] .card .cover{ box-shadow:0 14px 34px rgba(27,24,40,.24); }
+body[data-theme="suenostereo"] .block{ box-shadow:0 14px 34px rgba(27,24,40,.18); }
+
+/* Help! tambien es tema claro: mismo tratamiento */
+body[data-theme="help"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="help"] .cover{ border-color:rgba(16,32,61,.28); }
+body[data-theme="help"] .cover-wrap,
+body[data-theme="help"] .card .cover{ box-shadow:0 14px 34px rgba(16,32,61,.24); }
+body[data-theme="help"] .block{ box-shadow:0 14px 34px rgba(16,32,61,.18); }
+
+/* Signos tambien es tema claro: mismo tratamiento */
+body[data-theme="signos"] #grain{ opacity:.12; mix-blend-mode:multiply; }
+body[data-theme="signos"] .cover{ border-color:rgba(36,31,18,.28); }
+body[data-theme="signos"] .cover-wrap,
+body[data-theme="signos"] .card .cover{ box-shadow:0 14px 34px rgba(36,31,18,.24); }
+body[data-theme="signos"] .block{ box-shadow:0 14px 34px rgba(36,31,18,.18); }
+
+/* Cancion Animal: titulos en banda violeta, como los de la revista */
+body[data-theme="cancionanimal"] .h-sec{
+  background:var(--accent); color:#fff1dd;
+  display:inline-block; padding:3px 16px 6px; border-bottom:0;
+  transform:skewX(-8deg); letter-spacing:.04em;
+}
+
+/* The Final Cut: bloques negros y titulos con el cuadrado rojo de la revista */
+body[data-theme="finalcut"] .block{
+  border:1px solid rgba(216,31,31,.28);
+  box-shadow:0 16px 40px rgba(0,0,0,.6);
+}
+body[data-theme="finalcut"] .h-sec{
+  color:var(--ink); font-family:'Oswald', sans-serif; font-style:normal;
+  font-size:19px; letter-spacing:.22em; text-transform:uppercase;
+  border-bottom:1px solid rgba(242,234,214,.3); padding-bottom:10px;
+}
+body[data-theme="finalcut"] .h-sec::before{
+  content:''; display:inline-block; width:11px; height:11px;
+  background:var(--accent); margin-right:12px; vertical-align:1px;
+}
+
+/* bloques oscuros con filo neon, como en la revista */
+body[data-theme="dynamo"] .block{
+  border:1px solid rgba(198,240,50,.45);
+  box-shadow:0 16px 40px rgba(0,0,0,.6);
+}
+body[data-theme="dynamo"] .h-sec{
+  background:var(--accent); color:#120206;
+  display:inline-block; padding:2px 14px 5px; border-bottom:0;
+  transform:skewX(-8deg);
+}
+
+/* =========================== HEADER =========================== */
+.site-head{
+  max-width:var(--maxw); margin:0 auto; padding:26px 24px 10px;
+  display:grid; grid-template-columns:auto 1fr; gap:4px 18px; align-items:end;
+}
+.brand{
+  font-family:var(--font-display); font-size:clamp(30px,4.2vw,48px);
+  line-height:.92; letter-spacing:-.5px; text-decoration:none; color:var(--ink);
+  transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.brand-zoom{ display:block; }
+.brand-musical{ display:block; color:var(--ink-accent); transition:color .7s cubic-bezier(.4,.1,.2,1); }
+.brand-tag{
+  margin:0 0 6px; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-dim); line-height:1.5; transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.switcher{
+  grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
+  transition:border-color .7s cubic-bezier(.4,.1,.2,1);
+}
+.switcher button{
+  font-family:'Oswald', sans-serif; font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  background:transparent; color:var(--ink-dim); border:1px solid var(--line);
+  padding:7px 13px; border-radius:999px; cursor:pointer;
+  transition:all .3s ease;
+}
+.switcher button:hover{ color:var(--ink); border-color:var(--accent); }
+.switcher button[aria-current="true"]{
+  background:var(--accent); border-color:var(--accent); color:var(--on-accent);
+}
+
+/* =========================== HOME =========================== */
+main{ max-width:var(--maxw); margin:0 auto; padding:10px 24px 60px; }
+.home-hero{ padding:40px 0 30px; max-width:760px; }
+.kicker{
+  margin:0 0 10px; font-family:'Oswald',sans-serif; font-size:13px;
+  letter-spacing:.3em; text-transform:uppercase; color:var(--accent);
+  transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.home-title{
+  margin:0; font-family:var(--font-title); font-style:var(--title-style);
+  font-size:clamp(40px,7vw,86px); line-height:.98; letter-spacing:-1px;
+}
+.home-lead{ margin:20px 0 0; font-size:19px; color:var(--ink-dim); max-width:46ch; }
+.home-hint{ margin:28px 0 0; font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-dim); }
+.arrow{ display:inline-block; animation:bob 1.6s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+.grid{
+  display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fill, minmax(215px,1fr));
+  padding-bottom:20px;
+}
+.card{
+  background:none; border:0; padding:0; text-align:left; cursor:pointer; color:inherit;
+  display:flex; flex-direction:column; gap:12px;
+  transition:transform .35s cubic-bezier(.2,.8,.3,1);
+}
+.card:hover{ transform:translateY(-7px); }
+.card .cover{ box-shadow:0 14px 34px rgba(0,0,0,.5); }
+.card:hover .cover{ box-shadow:0 20px 44px rgba(0,0,0,.65); }
+.card-artist{
+  font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--accent); margin:0;
+}
+.card-title{
+  font-family:var(--font-title); font-style:var(--title-style);
+  font-size:21px; line-height:1.1; margin:0;
+}
+.card-year{ margin:0; font-size:13px; color:var(--ink-dim); }
+
+/* portada (compartida) */
+.cover{
+  aspect-ratio:1/1; width:100%; overflow:hidden;
+  border-radius:var(--cover-radius);
+  border:1px solid rgba(255,255,255,.12);
+  transition:box-shadow .35s ease, border-radius .7s cubic-bezier(.4,.1,.2,1);
+}
+.cover img{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+
+/* =========================== FICHA =========================== */
+.album{ padding-top:18px; }
+.back{
+  font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  background:transparent; border:1px solid var(--line); color:var(--ink-dim);
+  padding:8px 15px; border-radius:999px; cursor:pointer; margin-bottom:22px;
+  transition:all .3s ease;
+}
+.back:hover{ color:var(--ink); border-color:var(--accent); }
+
+.spread{
+  display:grid; grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); gap:34px;
+  align-items:start;
+}
+.page-left{ position:sticky; top:20px; }
+.issue{
+  margin:0 0 14px; font-family:'Oswald',sans-serif; font-size:11px;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--ink-dim);
+}
+.cover-wrap{ box-shadow:0 26px 60px rgba(0,0,0,.55); margin-bottom:24px; }
+.artist{
+  margin:0; font-family:var(--font-display);
+  font-size:clamp(32px,4.4vw,56px); line-height:.92; letter-spacing:-1px;
+  text-transform:uppercase;
+}
+.title{
+  margin:6px 0 0; font-family:var(--font-title); font-style:var(--title-style);
+  font-size:clamp(26px,3.4vw,42px); line-height:1.02; color:var(--ink-accent);
+  transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.year{
+  margin:14px 0 0; font-size:20px; letter-spacing:.1em;
+  padding-top:12px; border-top:1px solid var(--line);
+  display:inline-block; padding-right:40px;
+}
+.meta{ margin:6px 0 0; font-style:italic; color:var(--ink-dim); font-size:15px; }
+
+/* bloques de papel */
+.block{
+  background:var(--paper); color:var(--paper-ink);
+  border-radius:var(--radius); padding:22px 24px 24px;
+  box-shadow:0 16px 40px rgba(0,0,0,.35);
+  transition:background-color .7s cubic-bezier(.4,.1,.2,1), color .7s cubic-bezier(.4,.1,.2,1);
+}
+.block + .block{ margin-top:22px; }
+.h-sec{
+  margin:0 0 14px; font-family:var(--font-title); font-style:var(--title-style);
+  font-size:30px; line-height:1; color:var(--accent);
+  border-bottom:2px solid currentColor; padding-bottom:8px;
+  transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.resena p{ margin:0 0 .85em; font-size:15.5px; }
+.resena p:last-child{ margin-bottom:0; }
+
+/* polaroid */
+.photo{ float:right; width:210px; margin:0 0 16px 22px; position:relative; }
+.photo-slot{
+  aspect-ratio:4/3; background:
+    linear-gradient(135deg, var(--block-line), rgba(0,0,0,.05)),
+    var(--bg2);
+  border:1px solid rgba(0,0,0,.12);
+  transition:background-color .7s cubic-bezier(.4,.1,.2,1);
+}
+.photo-slot img{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+.photo{
+  background:#fbf7ee; padding:10px 10px 0; border-radius:2px;
+  box-shadow:0 10px 24px rgba(0,0,0,.32); transform:rotate(2deg);
+}
+.photo-caption{
+  margin:0; padding:9px 2px 11px; font-size:11px; font-style:italic;
+  /* la polaroid siempre es blanca, asi que este color no sigue al tema */
+  color:#6b645c; text-align:center; line-height:1.3;
+}
+.tape{
+  position:absolute; top:-12px; left:50%; width:86px; height:24px;
+  transform:translateX(-50%) rotate(-3deg);
+  background:rgba(226,197,126,.65); box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.cols{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px; }
+.cols .block + .block{ margin-top:0; }
+
+/* tracklist */
+.side-label{
+  margin:14px 0 8px; font-family:var(--font-title); font-style:var(--title-style);
+  font-size:17px; color:var(--accent); transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.side-label:first-child{ margin-top:0; }
+.tl{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.tl li{
+  display:flex; align-items:baseline; gap:10px;
+  padding:5px 0; border-bottom:1px solid var(--block-line);
+  font-size:14.5px;
+}
+.tl li::before{
+  counter-increment:t; content:counter(t,decimal-leading-zero);
+  font-family:'Oswald',sans-serif; font-weight:700; font-size:12.5px;
+  color:var(--accent); min-width:20px; transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.tl .tl-name{ flex:1; }
+.tl .tl-dur{ font-family:'Oswald',sans-serif; font-size:12.5px; color:var(--paper-dim); }
+
+/* seleccion */
+.picks{ list-style:none; margin:0; padding:0; }
+.picks li{ padding:11px 0; border-bottom:1px solid var(--block-line); }
+.picks li:last-child{ border-bottom:0; padding-bottom:0; }
+.picks b{
+  display:block; font-size:15.5px; font-weight:700;
+}
+.picks b::before{
+  content:'\2605'; color:var(--accent); margin-right:7px; font-size:13px;
+  transition:color .7s cubic-bezier(.4,.1,.2,1);
+}
+.picks span{ display:block; font-style:italic; font-size:13.5px; color:var(--paper-dim); }
+
+/* prev / next */
+.prevnext{ display:flex; justify-content:space-between; gap:12px; margin-top:34px; }
+.pn{
+  flex:1; text-align:left; background:transparent; cursor:pointer;
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:14px 18px; color:var(--ink); font-family:'Bitter',serif;
+  transition:all .3s ease;
+}
+.pn:last-child{ text-align:right; }
+.pn:hover{ border-color:var(--accent); }
+.pn small{
+  display:block; font-family:'Oswald',sans-serif; font-size:10px;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:3px;
+}
+.pn strong{ font-family:var(--font-title); font-style:var(--title-style); font-weight:400; font-size:19px; }
+
+/* =========================== FOOTER =========================== */
+.site-foot{
+  max-width:var(--maxw); margin:0 auto; padding:22px 24px 40px;
+  border-top:1px solid var(--line);
+  font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--ink-dim);
+  display:flex; gap:12px;
+}
+
+/* =========================== TRANSICION =========================== */
+main{ transition:opacity .3s ease, transform .3s ease; }
+body.is-switching main{ opacity:0; transform:translateY(10px); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition-duration:.01ms !important; }
+}
+
+/* =========================== RESPONSIVE =========================== */
+@media (max-width:980px){
+  .spread{ grid-template-columns:1fr; }
+  .page-left{ position:static; }
+  .cols{ grid-template-columns:1fr; }
+}
+@media (max-width:640px){
+  .site-head{ grid-template-columns:1fr; }
+  .brand-tag{ margin-bottom:0; }
+  .photo{ float:none; width:100%; max-width:240px; margin:0 auto 18px; }
+  .grid{ grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px; }
+  main{ padding-left:16px; padding-right:16px; }
+  .site-head{ padding-left:16px; padding-right:16px; }
+}

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoom Musical &middot; Discos que marcaron una época</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Archivo+Black&family=Bitter:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Oswald:wght@500;700&family=Rozha+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=26">
+</head>
+<body data-theme="home">
+
+  <!-- capas de ambiente: cambian con el album -->
+  <div id="decor" aria-hidden="true"></div>
+  <div id="grain" aria-hidden="true"></div>
+
+  <header class="site-head">
+    <a class="brand" href="#" data-go-home>
+      <span class="brand-zoom">Zoom</span><span class="brand-musical">Musical</span>
+    </a>
+    <p class="brand-tag">Revista de música<br>y cultura contemporánea</p>
+
+    <nav class="switcher" id="switcher" aria-label="Seleccionar álbum"></nav>
+  </header>
+
+  <main>
+    <!-- ============ HOME ============ -->
+    <section id="home" class="home">
+      <div class="home-hero">
+        <p class="kicker" id="kicker"></p>
+        <h1 class="home-title">Discos que<br>marcaron una época</h1>
+        <p class="home-lead" id="lead"></p>
+        <p class="home-hint"><span class="arrow">&#9660;</span> Haz clic en una portada</p>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- ============ FICHA DE ALBUM ============ -->
+    <section id="album" class="album" hidden>
+      <button class="back" type="button" data-go-home>&#8592; Volver a la portada</button>
+
+      <div class="spread">
+        <!-- columna izquierda -->
+        <div class="page page-left">
+          <p class="issue" id="issue"></p>
+          <div class="cover-wrap"><div class="cover" id="cover"></div></div>
+          <h2 class="artist" id="artist"></h2>
+          <p class="title" id="title"></p>
+          <p class="year" id="year"></p>
+          <p class="meta" id="meta"></p>
+        </div>
+
+        <!-- columna derecha -->
+        <div class="page page-right">
+          <div class="block block-resena">
+            <h3 class="h-sec">Rese&ntilde;a</h3>
+            <div class="photo">
+              <div class="tape"></div>
+              <div class="photo-slot" id="photo"></div>
+              <p class="photo-caption" id="photoCaption"></p>
+            </div>
+            <div id="resena" class="resena"></div>
+          </div>
+
+          <div class="cols">
+            <div class="block block-tracks">
+              <h3 class="h-sec">Tracklist</h3>
+              <div id="tracks"></div>
+            </div>
+
+            <div class="block block-pick">
+              <h3 class="h-sec">La Selecci&oacute;n</h3>
+              <ul id="picks" class="picks"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="prevnext">
+        <button type="button" id="prev" class="pn"></button>
+        <button type="button" id="next" class="pn"></button>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>Zoom Musical</span>
+    <span class="foot-dot">&bull;</span>
+    <span id="footCount"></span>
+  </footer>
+
+<script src="data.js?v=26"></script>
+<script src="app.js?v=26"></script>
+</body>
+</html>
